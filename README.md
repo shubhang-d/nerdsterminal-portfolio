@@ -1,36 +1,78 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# nerdsterminal-portfolio
 
-## Getting Started
+> "Building apps for Humans" — the personal portfolio of **Shubhang Dixit**, mobile developer from Mathura, India.
 
-First, run the development server:
+Live at **[nerdsterminal.com](https://nerdsterminal.com)**
+
+---
+
+## Stack
+
+| Layer | Tech |
+|---|---|
+| Framework | Next.js 16.2 + React 19 |
+| Styling | Tailwind CSS v4 |
+| 3D / WebGL | Three.js 0.183, @react-three/fiber, @react-three/drei |
+| Animation | Framer Motion 12, GSAP 3.14 |
+| Smooth scroll | Lenis 1.3 (synced to GSAP ScrollTrigger) |
+| Fonts | Space Grotesk (body), JetBrains Mono (code) |
+
+---
+
+## Features
+
+- OS-style **boot screen** animation on first load
+- Fullscreen **Three.js hero** — holographic rings, floating code fragments, mouse-reactive particle field, glowing data orbs
+- Interactive **terminal** in the About section (type `help`, `whoami`, `ls skills/`, etc.)
+- Animated **skill bars** + **3D rotating skill orbs** scene
+- **Project showcase** with 3D magnetic tilt cards and holographic shimmer
+- **Horizontal scroll roadmap** (GSAP ScrollTrigger pinned section) — learning journey from 2021 → future
+- **Timeline** — career milestones with alternating layout
+- **Custom cursor** with lagging ring and mix-blend-difference dot
+- Glitch text effect, scanline overlay, noise texture
+
+---
+
+## Run locally
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Project structure
 
-## Learn More
+```
+src/
+├── app/
+│   ├── globals.css        # design tokens, animations, utilities
+│   ├── layout.tsx         # fonts + metadata
+│   └── page.tsx
+└── components/
+    ├── BootScreen.tsx      # OS boot animation
+    ├── Navigation.tsx      # floating pill navbar
+    ├── Hero.tsx            # hero section + typewriter
+    ├── HeroScene.tsx       # Three.js canvas (ssr:false)
+    ├── About.tsx           # interactive terminal + profile card
+    ├── Skills.tsx          # skill bars + tab switcher
+    ├── SkillsScene3D.tsx   # Three.js skill orbs (ssr:false)
+    ├── Projects.tsx        # project showcase with tilt cards
+    ├── TechRoadmap.tsx     # GSAP horizontal scroll roadmap (ssr:false)
+    ├── Timeline.tsx        # career timeline
+    ├── Contact.tsx         # terminal-style contact section
+    ├── CustomCursor.tsx    # custom cursor (ssr:false)
+    └── PortfolioContent.tsx# root client wrapper (Lenis + GSAP init)
+```
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Links
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- GitHub — [github.com/shubhang-d](https://github.com/shubhang-d)
+- LinkedIn — [linkedin.com/in/shubhang-dixit](https://linkedin.com/in/shubhang-dixit)
+- Twitter — [@shubhang_dixit](https://twitter.com/shubhang_dixit)
+- Blog — [nerdsterminal.com](https://nerdsterminal.com)
