@@ -185,7 +185,8 @@ function HomePanel() {
           {[
             { label: 'GitHub', href: 'https://github.com/shubhang-d', color: '#E2E8F0' },
             { label: 'LinkedIn', href: 'https://www.linkedin.com/in/shubhang-dixit/', color: '#0EA5E9' },
-            { label: 'nerdsterminal.com', href: 'https://nerdsterminal.com', color: '#FF6B35' },
+            { label: 'X / Twitter', href: 'https://x.com/shubhang_dixit', color: '#E2E8F0' },
+            { label: 'Instagram', href: 'https://www.instagram.com/heyshubhang/', color: '#E1306C' },
           ].map(l => (
             <a key={l.label} href={l.href} target="_blank" rel="noopener noreferrer"
               className="flex items-center justify-between px-4 py-2.5 rounded-xl transition-all hover:scale-[1.02] cursor-pointer"
@@ -230,7 +231,7 @@ function AboutPanel() {
             { label: 'Primary stack', value: 'Flutter + Kotlin' },
             { label: 'Also builds', value: 'TypeScript / Python' },
             { label: 'Published pkg', value: 'is_even_new' },
-            { label: 'Blog', value: 'nerdsterminal.com' },
+            { label: 'Instagram', value: '@heyshubhang' },
           ].map(item => (
             <div key={item.label} className="rounded-xl p-3" style={{ background: 'rgba(10,10,30,0.6)', border: '1px solid rgba(255,255,255,0.05)' }}>
               <div className="text-[#64748B] font-mono text-[9px] uppercase tracking-wider mb-1">{item.label}</div>
@@ -254,7 +255,7 @@ function AboutPanel() {
       <div>
         <SectionLabel text="Community" />
         <div className="rounded-xl p-4 flex items-start gap-3" style={{ background: 'rgba(10,10,30,0.5)', border: '1px solid rgba(124,58,237,0.15)' }}>
-          <span className="text-xl">🧑‍💻</span>
+          <Image src="/gdgoc.png" alt="GDGoC" width={28} height={28} className="object-contain shrink-0" />
           <div>
             <div className="text-[#E2E8F0] text-sm font-semibold">GDGoC GLAU Organizer</div>
             <div className="text-[#64748B] text-xs mt-0.5">Leading tech events &amp; workshops at GLA University</div>
@@ -445,8 +446,8 @@ function ContactPanel() {
           {[
             { label: 'GitHub', sub: 'github.com/shubhang-d', href: 'https://github.com/shubhang-d', color: '#E2E8F0' },
             { label: 'LinkedIn', sub: 'linkedin.com/in/shubhang-dixit', href: 'https://www.linkedin.com/in/shubhang-dixit/', color: '#0077B5' },
-            { label: 'Twitter / X', sub: '@shubhang_dixit', href: 'https://twitter.com/shubhang_dixit', color: '#1DA1F2' },
-            { label: 'Blog', sub: 'nerdsterminal.com', href: 'https://nerdsterminal.com', color: '#FF6B35' },
+            { label: 'X / Twitter', sub: '@shubhang_dixit', href: 'https://x.com/shubhang_dixit', color: '#E2E8F0' },
+            { label: 'Instagram', sub: '@heyshubhang', href: 'https://www.instagram.com/heyshubhang/', color: '#E1306C' },
           ].map(l => (
             <a key={l.label} href={l.href} target="_blank" rel="noopener noreferrer"
               className="flex items-center gap-3 px-4 py-3 rounded-xl transition-all hover:scale-[1.01] cursor-pointer"
@@ -486,7 +487,7 @@ const EVENTS = [
   { year: '2023', title: 'Flutter Mastery', icon: '🦋', color: '#00B4D8', type: 'skill', desc: 'Built Cross_Chat, started cross-platform journey.' },
   { year: '2023', title: 'pub.dev Package', icon: '📦', color: '#00FF88', type: 'milestone', desc: 'Released is_even_new on pub.dev.' },
   { year: '2023', title: 'CSIR-NPL Project', icon: '⚡', color: '#FF6B35', type: 'work', desc: 'BLE hardware bridge for CSIR-NPL lab.' },
-  { year: '2024', title: 'GDGoC Organizer', icon: '🧑‍💻', color: '#4285F4', type: 'community', desc: 'Leading developer community at GLA University.' },
+  { year: '2024', title: 'GDGoC Organizer', icon: 'gdg', color: '#4285F4', type: 'community', desc: 'Leading developer community at GLA University.' },
   { year: '2024', title: 'AI & ML Exploration', icon: '🧠', color: '#7C3AED', type: 'skill', desc: 'Keras OCR, MediaPipe, CloudCode AI tool.' },
   { year: '2024', title: 'Epsilon Player', icon: '🎵', color: '#7F52FF', type: 'project', desc: 'Android media player with Compose + Media3.' },
   { year: '2025', title: 'Swift & iOS', icon: '🍎', color: '#FA7343', type: 'skill', desc: 'DoomScrollingApp ships on App Store.' },
@@ -517,7 +518,11 @@ function TimelinePanel() {
 
               <div className="rounded-xl p-3" style={{ background: 'rgba(10,10,30,0.5)', border: `1px solid ${e.color}15` }}>
                 <div className="flex items-center gap-2 mb-1">
-                  <span className="text-sm">{e.icon}</span>
+                  {e.icon === 'gdg' ? (
+                    <Image src="/gdgoc.png" alt="GDGoC" width={18} height={18} className="object-contain shrink-0" />
+                  ) : (
+                    <span className="text-sm">{e.icon}</span>
+                  )}
                   <span className="text-[#E2E8F0] text-xs font-semibold">{e.title}</span>
                   <span className="font-mono text-[9px] ml-auto" style={{ color: e.color }}>{e.year}</span>
                 </div>
