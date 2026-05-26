@@ -1,5 +1,5 @@
-import PortfolioContent from '@/components/PortfolioContent'
+import MindMapPortfolio from '@/components/MindMapPortfolio'
 
 export default function Page() {
-  return <PortfolioContent />
+  return <MindMapPortfolio />
 }
